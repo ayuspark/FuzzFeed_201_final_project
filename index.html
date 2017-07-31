@@ -9,16 +9,36 @@
 <body>
   <div class="video-background">
     <div class="video-foreground">
-    <iframe src="https://www.youtube.com/embed/videoseries?autoplay=1&loop=1&list=PLybRCXRjVdyvFNUnyLzA8OITYF7LZAIf6" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/videoseries?autoplay=1&loop=1&list=PLybRCXRjVdyvFNUnyLzA8OITYF7LZAIf6" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
-  <div id="vidtop-content">
-    <div class="vid-info">
+
+
+    <div class="info">
       <h1>FuzzFeed</h1>
-      <p>Fuzzy image game!</p>
-      <p></p>
     </div>
+
+  <!-- Game Description -->
+  <div class="tooltip"><img src="indexImg/questionMark.png" alt="Question Mark" style="width:50px;height:50px;">
+    <span class="tooltiptext">You will select the number of alcoholic drinks you've consumed then the length of time you have been coding for. Once we have you're input, we'll display an image as seen through the eyes of an indivual succumbing to the effects of these two horrible vices at the levels you've specified.</span>
   </div>
+
+  <div class="selectInterface">
+    <select class="drinkSelect" name="drinkSelect">
+      <option value="" disabled selected>How many drinks?</option>
+      <option value="1">Sober</option>
+      <option value="2">A few</option>
+      <option value="3">...calling Ex</option>
+    </select>
+    <select class="codeSelect" name="codeSelect">
+      <option value="" disabled selected>Coding time?</option>
+      <option value="1">undefined</option>
+      <option value="2">Let me run that again...</option>
+      <option value="3">Meaning of life?</option>
+    </select>
+    <input type="button" name="btn" class="btn-style" value="Fuzzy!" />
+  </div>
+
   <script src="index.js"></script>
 </body>
 </html>
