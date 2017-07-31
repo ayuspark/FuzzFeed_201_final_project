@@ -27,11 +27,37 @@ nav {
   display: inline-block;
 }
 
-img {
-  height: 200px;
-  width: 200px;
+#img_box img {
+  height: 400px;
+  width: 400px;
 }
 
+#img_box img {
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.36,.07,.19,.97);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-5px, -5px, 0);
+  }
+
+ 20%, 80% {
+    transform: translate3d(5px, 5px, 0);
+  }
+
+ 30%, 50%, 70% {
+    transform: translate3d(-9px, 9px, 0);
+  }
+
+ 40%, 60% {
+    transform: translate3d(9px, 9px, 0);
+  }
+}
 
 
 
