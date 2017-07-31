@@ -1,1 +1,52 @@
+* {
+  outline: 1px solid skyblue;
+  box-sizing: border-box;
+}
 
+header {
+  /*position: fixed;*/
+  /*top: 0;*/
+}
+
+nav {
+  width: 960px;
+  height: 72px;
+  margin: 0 auto;
+  outline: 1px solid red;
+}
+
+#fuzzfeed  {
+  font-size: 2em;
+}
+
+#nav_bar {
+  text-align: center;
+}
+
+#nav_bar li {
+  display: inline-block;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right:0;
+  height: 72px;
+  width: 100%;
+  outline: 1px solid red;
+}
