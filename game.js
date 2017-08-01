@@ -1,12 +1,10 @@
 'use strict';
-var coding = '20px'; //need to get rid of
+var coding = '5px'; //need to get rid of
 var drink = '0.12';
 //CREATE IMG
 function Images(name) {
   this.name = name;
   this.source = 'img/' + this.name + '.jpg';
-  // this.vote = 0;//count when img gets picked
-  // this.view = 0;//count when img displays
   Images.all.push(this);
 }
 
@@ -45,11 +43,10 @@ function loadImg(){
   } else {
     loadImg();
   }
-  imageRender('0.12', '10px');//test, need to delete
+  imageRender('0.12', '5px');//test, need to delete
 }
 //PAGE LOAD IMG
 loadImg();
-imageRender(drink, coding);
 
 function answersHandler(e) {
   console.log(e.target.id);
@@ -74,5 +71,5 @@ function imageRender(drink, coding){
   var blurLevel = 'blur(' + coding + ')';
   document.getElementById('img_box').children[0].style.animationName = 'shake ';
   document.getElementById('img_box').children[0].style.animationDuration = shakeLevel ;
-  document.getElementById('img_box').children[0].style.WebkitFilter = blurLevel;
+  document.getElementById('img_box').children[0].style.filter = blurLevel;
 }
