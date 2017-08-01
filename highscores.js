@@ -19,21 +19,16 @@ new HighScore ('Brandon', 700);
 //   orderedScores =
 // };
 
-function allScores(){
+HighScore.prototype.render = function(){
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.name;
+  trEl.appendChild(tdEl);
 
-  for(var i = 0; i < theScores.length; i++){
-    var trEl = document.createElement('tr');
-    var tdEl = document.createElement('td');
-    tdEl.textContent = theScores[i].name;
-    trEl.appendChild(tdEl);
-  }
-  scoresTable.appendChild(trEl);
-  for(var n = 0; n < theScores.length; n++){
-    trEl = document.createElement('tr');
-    tdEl = document.createElement('td');
-    tdEl.textContent = theScores[n].score;
-    trEl.appendChild(tdEl);
-  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = this.score;
+  trEl.appendChild(tdEl);
+
   scoresTable.appendChild(trEl);
 };
 
@@ -48,8 +43,13 @@ function tableHeader(){
   thEl.textContent = 'Score';
   trEl.appendChild(thEl);
   scoresTable.appendChild(trEl);
-  allScores();
-}
+};
+
+function tableScores(){
+  for(var i = 0; i < theScores.length; i++){
+    theScores[i].render();
+  }
+};
 
 
 // if(local storage){
@@ -58,4 +58,5 @@ function tableHeader(){
 //   load default high scores table
 // }
 tableHeader();
+tableScores();
 // allScores();
