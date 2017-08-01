@@ -1,22 +1,28 @@
 * {
-  outline: 1px solid skyblue;
+  /*outline: 1px solid skyblue;*/
   box-sizing: border-box;
 }
 
 header {
-  /*position: fixed;*/
+  position: relative;
+  z-index: 999;
+  margin-top: 0;
   /*top: 0;*/
 }
 
 nav {
   width: 960px;
   height: 72px;
-  margin: 0 auto;
-  outline: 1px solid red;
+  margin: 20px auto;
+  /*outline: 1px solid red;*/
 }
 
-#fuzzfeed  {
-  font-size: 2em;
+#fuzzfeed a {
+  font-size: 3em;
+  color: rgb(255,20,147);
+  font-family: sans-serif;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 #nav_bar {
@@ -27,17 +33,44 @@ nav {
   display: inline-block;
 }
 
+.main {
+  width: 100%;
+  height: 703px;
+  margin: 0 auto;
+  /*outline: 2px solid green;*/
+  display: flex;
+  align-content: flex-end;
+  position: absolute;
+  top: 0px;
+  /*align-items: center;*/
+}
+
+#img_box {
+  width: calc(50% + 0.5px);
+  height: 100%;
+  background-color: rgb(232,232,232);
+  /*outline: 5px solid purple;*/
+}
+
+#answers {
+  width: calc(50% - 0.5px);
+  height: 100%;
+  /*outline: 5px solid yellow;*/
+  background-color: rgb(40,40,40);
+}
+
 #img_box img {
+  display: block;
   height: 400px;
   width: 400px;
+  margin: calc(50% - 150px) auto;
+  outline: 2px dashed skyblue;
 }
 
 #img_box img {
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.36,.07,.19,.97);
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  animation-delay: 1s;
   animation-iteration-count: infinite;
 }
 
@@ -59,20 +92,63 @@ nav {
   }
 }
 
+#answers button {
+  width: 70%;
+  display: block;
+  color: rgb(245,245,245);
+  font-size: 2em;
+  font-family: sans-serif;
+  margin: 50px auto;
+  border-radius: 3px;
+	padding: 15px 70px;
+  text-transform: uppercase;
+	font-weight: 700;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 3px 0 0 #383838;
+	border:3px solid #a8bdc2;;
+  background-color:#a8bdc2;
+	/*border-color:#a8bdc2;*/
+  animation: pulse 1s linear infinite alternate;
+	-webkit-animation: pulse 1s linear infinite alternate;
+}
 
+@-webkit-keyframes pulse {
+	100% {
+    transform: translateY(6.9px);
+  }
+}
 
+@keyframes pulse {
+	100% {
+		transform: translateY(6.9px);
+	}
+}
 
+#answers button:active{
+	background-image: linear-gradient(rgba(0,0,0,.1) 13%, transparent 13%,transparent);
+	box-shadow: 0 1px 0 0 #383838;
+	color: rgba(0, 0, 0,.45);
+	text-shadow: none;
+	-webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
 
+#answers button:hover{
+	background-color:#7c8b8f;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
 
+#answers button:first-child {
+  margin-top: calc(50% - 100px);
+}
 
+#answers button:nth-child(2) {
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
 
-
-
-footer {
-  position: fixed;
-  bottom: 0;
-  right:0;
-  height: 72px;
-  width: 100%;
-  outline: 1px solid red;
+#answers button:last-child {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;"
 }
