@@ -1,8 +1,21 @@
 header {
+  border: 1px solid black;
   width: 100%;
-  height: 100px;
+  height: 150px;
   background: black;
   color:  #FF1493;
+}
+h1 {
+  /*border: 1px solid white;*/
+  margin: auto 10px;
+  float: left;
+  font-family: 'Frijole';
+  font-size: 36pt;
+}
+nav ul {
+  /*border: 1px solid white;*/
+  width: 900px;
+  margin-left: 30px;
 }
 header ul li {
   display: inline-block;
@@ -13,15 +26,14 @@ a {
   text-decoration: none;
   color:  #FF1493;
   font-size: 24pt;
-}
-header ul .big {
-  font-size: 36pt;
+  -webkit-filter: blur(3px);
 }
 a:active {
   color: yellow;
 }
 a:hover {
   color: white;
+  -webkit-filter: blur(0px);
 }
 a:visited {
   color:  #FF1493;
