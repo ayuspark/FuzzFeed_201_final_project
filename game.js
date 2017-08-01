@@ -1,34 +1,47 @@
 'use strict';
 var coding = '5px'; //need to get rid of
 var drink = '0.12';
-//CREATE IMG
+
+Images.all = [];
+Images.allNames = ['compare1','compare2', 'kittens', 'llamas', 'loveprairedog', 'meerkats', 'penguins', 'puppies', 'sparkles', 'SpearsAgi', 'wardog', 'wolves', 'zombies'];
+
 function Images(name) {
   this.name = name;
   this.source = 'img/' + this.name + '.jpg';
   Images.all.push(this);
 }
-
-Images.all = [];
-Images.allNames = ['compare1','compare2', 'kittens', 'llamas', 'loveprairedog', 'meerkats', 'penguins', 'puppies', 'sparkles', 'SpearsAgi', 'wardog', 'wolves', 'zombies'];
-
 for(var i = 0; i < Images.allNames.length; i++){
   new Images(Images.allNames[i]);
 }
-
 //ASSIGN ANSWERS TO each img object
 Images.all[0].answer = [{y:'Bottom'},{n1: 'Top'}];
+Images.all[0].question = 'Which one is the king?';
 Images.all[1].answer = [{n1:'Bottom'},{y: 'Top'},{n2: 'Both'}];
+Images.all[1].question = 'Which one gives a Dam?';
 Images.all[2].answer = [{n1: 4},{y: 5},{n2: 7}];
+Images.all[2].question = 'How many kittens?';
 Images.all[3].answer = [{n1: 2},{y: 3},{n2: 4}];
+Images.all[3].question = 'How many llamas?';
 Images.all[4].answer = [{n1: 1},{y: 3},{n2: 2}];
+Images.all[4].question = 'How many prairie dogs?';
 Images.all[5].answer = [{n1: 2},{y: 3},{n2: 4}];
+Images.all[5].question = 'How many meerkats?';
 Images.all[6].answer = [{n1: 3},{y: 5},{n2: 7}];
+Images.all[6].question = 'How many penguins?';
 Images.all[7].answer = [{n1: 8},{y: 10},{n2: 9}];
+Images.all[7].question = 'How many...awww...puppies?';
 Images.all[8].answer = [{n1:6},{y: 7},{n2: 9}];
+Images.all[8].question = 'I sparkle, but how many?';
 Images.all[9].answer = [{n1:'Left'},{y: 'Right'},{n2: 'both'}];
+Images.all[9].question = 'Aguilera?';
 Images.all[10].answer = [{n1:'Playtime!'},{y: 'War!!!'},{n2: 'Neither'}];
+Images.all[10].question = 'I mma go:';
 Images.all[11].answer = [{n1: 4},{y: 5},{n2: 8}];
+Images.all[11].question = 'How many wolves?';
 Images.all[12].answer = [{n1: 8},{y: 10},{n2: 'the whole herd!'}];
+Images.all[12].question = 'How big is the herd?';
+
+
 
 
 
@@ -50,8 +63,10 @@ function loadImg(){
     document.getElementById('img_box').appendChild(imgEl);
     Images.previousImg.push(randomIndex);
 
-//!!!!!!!!!!!!!the following line needs a for loop for ALL imgs
-    // for(var i = 0; i < Images.all.length; i++){
+    var h2El = document.createElement('h2');
+    h2El.textContent = Images.all[randomIndex].question;
+    document.getElementById('answers').appendChild(h2El);
+
     answerShuffle(Images.all[randomIndex].answer);
     for(var n = 0; n < Images.all[randomIndex].answer.length; n++){
       var btnEl = document.createElement('button');
@@ -59,7 +74,6 @@ function loadImg(){
       btnEl.setAttribute('id', Object.keys(Images.all[randomIndex].answer[n]));
       document.getElementById('answers').appendChild(btnEl);
     }
-    // }
 
   } else {
     loadImg();
