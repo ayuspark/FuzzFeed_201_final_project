@@ -61,7 +61,7 @@ nav {
 
 #img_box img {
   display: block;
-  height: 400px;
+  height: auto;
   width: 400px;
   margin: calc(50% - 150px) auto;
   outline: 2px dashed skyblue;
