@@ -9,7 +9,7 @@ function Images(name) {
 }
 
 Images.all = [];
-Images.allNames = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+Images.allNames = ['compare1','compare2', 'kittens', 'lilcat', 'lion', 'llamas', 'loveprairedog', 'meerkats', 'otter', 'penguins', 'prairedog', 'puppies', 'sparkles', 'SpearsAgi', 'wardog', 'wolves', 'zombies'];
 
 for(var i = 0; i < Images.allNames.length; i++){
   new Images(Images.allNames[i]);
