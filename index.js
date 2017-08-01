@@ -6,3 +6,5 @@
 
 // ***** Recall localStorage *****
 //Pictures.all = JSON.parse(localStorage.lsClicks);
+
+// document.getElementById('newOrderForm').addEventListener('submit', handleAddToCart);
