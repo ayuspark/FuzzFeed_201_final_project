@@ -1,13 +1,18 @@
 'use strict'
 
 var scoreTable = getElementById('scoresTable');
+var newScores = [];
 
 var HighScores = function(name, score){
   this.name = name;
   this.score = score;
 };
 
-function showHighScores(){
+function sortScores () {
+  newScores = newScores.sort();
+}
+
+function showHighScores() {
   var ulEl = document.getElementById('list');
 
   for(var i = 0; i < HighScores.all.length; i++){

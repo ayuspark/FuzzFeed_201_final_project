@@ -6,19 +6,21 @@ header {
   color:  #FF1493;
 }
 h1 {
-  /*border: 1px solid white;*/
-  margin: auto 10px;
+  border: 1px solid white;
+  margin: 35px 10px;
   float: left;
   font-family: 'Frijole';
   font-size: 36pt;
   display: inline-block;
 }
 nav ul {
-  /*border: 1px solid white;*/
+  border: 1px solid white;
   width: 900px;
+  float: right;
   margin-left: 30px;
 }
 header ul li {
+  float: right;
   display: inline-block;
   margin-top: 45px;
   margin-right: 85px;
@@ -28,6 +30,7 @@ a {
   color:  #FF1493;
   font-size: 24pt;
   -webkit-filter: blur(3px);
+  border: 1px dotted red;
 }
 a:active {
   color: yellow;
