@@ -19,7 +19,7 @@ h1{
   font-size: 120px;
   color: #FF1493;
   margin-top: 0px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.41);
 }
 @media (min-aspect-ratio: 16/9) {
   .video-foreground { height: 300%; top: -100%; }
@@ -35,27 +35,28 @@ h1{
 .vid-info .acronym { display: none; }
 }
 /*----- DROP DOWN MENUS -----*/
-.btn-style{
-	border : solid 1px #ffabff;
-	border-radius : 3px;
-	moz-border-radius : 3px;
-	-webkit-box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
-	-moz-box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
-	box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
-	font-size : 20px;
+#btn-style{
+	border : solid 1px #b3b3b3;
+	border-radius : 5px;
+	moz-border-radius : 1px;
+	font-size : 21px;
+  font-family: Frijole;
 	color : #ffffff;
-	padding : 1px 17px;
-	background : #fcecfc;
-	background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcecfc), color-stop(51%,#fba6e2), color-stop(51%,#fd89d6), color-stop(100%,#ff7cd8));
-	background : -moz-linear-gradient(top, #fcecfc 0%, #fba6e2 51%, #fd89d6 51%, #ff7cd8 100%);
-	background : -webkit-linear-gradient(top, #fcecfc 0%, #fba6e2 51%, #fd89d6 51%, #ff7cd8 100%);
-	background : -o-linear-gradient(top, #fcecfc 0%, #fba6e2 51%, #fd89d6 51%, #ff7cd8 100%);
-	background : -ms-linear-gradient(top, #fcecfc 0%, #fba6e2 51%, #fd89d6 51%, #ff7cd8 100%);
-	background : linear-gradient(top, #fcecfc 0%, #fba6e2 51%, #fd89d6 51%, #ff7cd8 100%);
-	filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=0 );
-  margin: 0 auto;
+	padding : 5px 17px;
+	background : #f7f7f7;
+	background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ff1491));
+	background : -moz-linear-gradient(top, #f7f7f7 0%, #ff1491 100%);
+	background : -webkit-linear-gradient(top, #f7f7f7 0%, #ff1491 100%);
+	background : -o-linear-gradient(top, #f7f7f7 0%, #ff1491 100%);
+	background : -ms-linear-gradient(top, #f7f7f7 0%, #ff1491 100%);
+	background : linear-gradient(top, #f7f7f7 0%, #ff1491 100%);
+	filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ff1491',GradientType=0 );
 }
-.selectInterface{
+#btn-style:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+#selectInterface{
   width: 50%;
   margin: 0 auto;
   position: absolute;
@@ -67,15 +68,18 @@ select{
   height: 40px;
   margin-right: 20px;
 }
+#selectInterface{
+  display: flex;
+  align-items: center;
+}
 
 /*----- Game Description -----*/
 .tooltip {
   position: absolute;
   bottom: 15%;
-  left: 30%;
+  right: 105%;
   display: inline-block;
   border-bottom: 1px dotted black;
-  color: magenta;
 }
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -97,13 +101,21 @@ select{
     content: "";
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 15%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
 .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip:hover{
+  -webkit-transform:scale(1.3);
+  -moz-transform:scale(1.3);
+  -ms-transform:scale(1.3);
+  -o-transform:scale(1.3);
+  transform:scale(1.3);
+  cursor: help;
 }

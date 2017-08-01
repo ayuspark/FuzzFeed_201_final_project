@@ -1,10 +1,14 @@
-// 'use strict';
-//
-// localStorage.setItem('lsClicks', JSON.stringify(Pictures.all));
-// console.log('localStorage inialized or appended');
+'use strict';
 
+function selectHandler(event){
+  event.preventDefault();
 
-// ***** Recall localStorage *****
-//Pictures.all = JSON.parse(localStorage.lsClicks);
+  var drink = event.target.drinkSelect.value;
+  var coding = event.target.codeSelect.value;
+  localStorage.setItem('drink', JSON.stringify(drink));
+  localStorage.setItem('coding', JSON.stringify(coding));
+  location.href = 'game.html'
+} // selectHandler END
 
-// document.getElementById('newOrderForm').addEventListener('submit', handleAddToCart);
+// Listen for submit button clickage
+document.getElementById('selectInterface').addEventListener('submit', selectHandler);
