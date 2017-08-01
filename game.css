@@ -63,7 +63,8 @@ nav {
 
 #img_box img {
   display: block;
-  height: 400px;
+  height: auto;
+  max-height: 400px;
   width: 400px;
   margin: calc(50% - 150px) auto;
   outline: 2px dashed skyblue;
@@ -93,6 +94,14 @@ nav {
  40%, 60% {
     transform: translate3d(9px, 9px, 0);
   }
+}
+
+#answers h2 {
+  font-family: sans-serif;
+  font-size: 2em;
+  color:rgb(232, 232, 232);
+  margin-top: 120px;
+  text-align: center;
 }
 
 #answers button {
@@ -143,7 +152,7 @@ nav {
 }
 
 #answers button:first-child {
-  margin-top: calc(50% - 100px);
+  margin-top: calc(50% - 10px);
 }
 
 #answers button:nth-child(2) {
