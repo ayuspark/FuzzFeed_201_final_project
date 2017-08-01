@@ -15,9 +15,9 @@
   pointer-events: none;
 }
 h1{
-  font-family: Helvetica;
-  font-size: 150px;
-  color: magenta;
+  font-family: Frijole;
+  font-size: 120px;
+  color: #FF1493;
   margin-top: 0px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
