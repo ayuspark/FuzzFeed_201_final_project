@@ -11,7 +11,7 @@ if(localStorage){
 }
 
 Images.all = [];
-Images.allNames = ['compare1','compare2','kittens','llamas','loveprairedog','meerkats','penguins','puppies','sparkles','SpearsAgi','wardog','wolves','zombies','captainAmerica','wolfprey','pixarorreal','kermit','moontortilla','therock','easyfennecfox','shelves','flexing','easyquokka','stich','eeyore','thordouble','jamesfranco','waxjackie','drax','catfightdog','fakeocean'];
+Images.allNames = ['compare1','compare2','kittens','llamas','loveprairedog','meerkats','penguins','puppies','sparkles','SpearsAgi','wardog','wolves','zombies','captainAmerica','wolfprey','pixarorreal','kermit','moontortilla','therock','easyfennecfox','shelves','flexing','easyquokka','stich','eeyore','thordouble','jamesfranco','waxjackie','drax','catfightdog'];
 
 function Images(name) {
   this.name = name;
@@ -53,12 +53,12 @@ Images.all[9].answer = [{n1:'Left'},{y: 'Right'},{n2: 'both'}];
 Images.all[9].question = 'which one is Christina Aguilera?';
 ///
 Images.all[10].answer = [{n1:'Play!'},{y: 'to War!!!'},{n2: 'Neither'}];
-Images.all[10].question = 'Imma go :';
+Images.all[10].question = 'Imma go:';
 //
 Images.all[11].answer = [{n1: 4},{y: 5},{n2: 8}];
 Images.all[11].question = 'How many wolves?';
 ///
-Images.all[12].answer = [{n1: 6},{y: 8},{n2: 'The whole horde!'}];
+Images.all[12].answer = [{n1: 10},{y: 8},{n2: 'The whole horde!'}];
 Images.all[12].question = 'How many zombies are gonna eat you?';
 ///
 Images.all[13].answer = [{n1: 'left'},{y: 'right'},{n2: 'Both of them'}];
@@ -103,8 +103,8 @@ Images.all[25].question = 'which one is real thor?';
 Images.all[26].answer = [{n1: 'right'},{y: 'left'}];
 Images.all[26].question = 'which one is James Franco?';
 //
-Images.all[27].answer = [{n1: 'right, other is wax figure' }, {n2: 'left,other is wax figure'}, {y: 'he is his own double with a wax figure!'}];
-Images.all[27].question = 'which one is jackie\'s stunt double?';
+Images.all[27].answer = [{n1: 'right, other is wax figure' }, {n2: 'left, other is wax figure'}, {y: 'he is his own double with a wax figure!'}];
+Images.all[27].question = 'which one is jackie chan\'s stunt double?';
 //
 Images.all[28].answer = [{n1: 'right'},{y: 'left'}];
 Images.all[28].question = 'which one is NOT the stunt double for Drax The Destroyer?';
@@ -112,8 +112,8 @@ Images.all[28].question = 'which one is NOT the stunt double for Drax The Destro
 Images.all[29].answer = [{n1: 'the dog! it\'s laying the smackdown!'},{y: 'the cat! it\'s throwing them hands!'}];
 Images.all[29].question = 'Who is winning the play fight?';
 ////
-Images.all[30].answer = [{n1: 'real'},{y: 'pixar'}];
-Images.all[30].question = 'real ocean or pixar ocean?';
+// Images.all[30].answer = [{n1: 'real'},{y: 'pixar'}];
+// Images.all[30].question = 'real ocean or pixar ocean?';
 //++++++++++++++++++++++++++++++++++
 //+++++++++END OF QUESTIONS+++++++++
 //++++++++++++++++++++++++++++++++++
@@ -135,7 +135,7 @@ function loadImg(){
     Images.previousImg.push(randomIndex);
 
     var h2El = document.createElement('h2');
-    h2El.textContent = Images.all[randomIndex].question;
+    h2El.textContent = Images.all[randomIndex].question.toUpperCase();
     document.getElementById('answers').appendChild(h2El);
 
     answerShuffle(Images.all[randomIndex].answer);
@@ -218,7 +218,7 @@ function User(username, score){
   User.all.push(this);
 }
 
-function userSubmitHandler(e) {
+function userSubmitHandler(e){
   event.preventDefault();
   var name = e.target.username.value;
   console.log(name);
@@ -227,7 +227,23 @@ function userSubmitHandler(e) {
   location.href = 'highscores.html';
   userSubmitHandler.reset();
 }
+
+function openMenuHandler(e){
+  if(e.target.className === 'mini_menu_icon'){
+    document.getElementsByClassName('menu')[0].style.display = 'block';
+    document.getElementsByClassName('mini_menu_icon')[0].style.display = 'none';
+  }
+}
+
+function closeMenuHandler(e) {
+  if(e.target.className === 'close'){
+    document.getElementsByClassName('menu')[0].style.display = 'none';
+    document.getElementsByClassName('mini_menu_icon')[0].style.display = 'block';
+  }
+}
 //EVENT listener
 document.getElementById('answers').addEventListener('click', answersHandler);
 document.getElementById('score_modal').addEventListener('click', closeModalHandler);
 document.getElementById('user_form').addEventListener('submit', userSubmitHandler);
+document.getElementById('nav_bar').addEventListener('click', openMenuHandler);
+document.getElementById('nav_bar').addEventListener('click', closeMenuHandler);

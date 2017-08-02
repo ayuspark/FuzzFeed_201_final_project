@@ -67,6 +67,9 @@ select{
   width: 180px;
   height: 40px;
   margin-right: 20px;
+  border: none;
+  appearance: none;
+  box-shadow: 0 3px 0 0 #383838;
 }
 #selectInterface{
   display: flex;
