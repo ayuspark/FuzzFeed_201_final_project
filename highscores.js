@@ -1,6 +1,6 @@
 'use strict';
 
-
+var newScore = [];
 var theScores = [];
 var scoresTable = document.getElementById('highscores');
 
@@ -15,9 +15,11 @@ new HighScore ('Phil', 500);
 new HighScore ('Lola', 600);
 new HighScore ('Brandon', 700);
 
-// function sortScores(){
-//   orderedScores =
-// };
+function addScore(){
+
+  theScores.push(newScore);
+}
+
 theScores.sort(function(a, b){
   return b.score - a.score;
 });
@@ -55,11 +57,14 @@ function tableScores(){
 };
 
 
-// if(local storage){
-//   run function to add new scores to high score table
-// } else {
-//   load default high scores table
-// }
-tableHeader();
-tableScores();
+if(localStorage){
+  newScore = JSON.parse(localStorage.getItem('User.all'));
+  addScore();
+  tableHeader();
+  tableScores();
+  console.log('Storage available');
+} else {
+  tableHeader();
+  tableScores();
+}
 // allScores();
