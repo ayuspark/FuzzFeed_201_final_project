@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 
 var theScores = [];
@@ -18,6 +18,9 @@ new HighScore ('Brandon', 700);
 // function sortScores(){
 //   orderedScores =
 // };
+theScores.sort(function(a, b){
+  return b.score - a.score;
+});
 
 HighScore.prototype.render = function(){
   var trEl = document.createElement('tr');
