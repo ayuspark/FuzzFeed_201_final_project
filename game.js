@@ -155,7 +155,7 @@ function answersHandler(e) {
         document.getElementById('answers').innerHTML = '';
         loadImg();
       }, 1500);
-    } else {
+    } else if(e.target.id !== 'answers') {
       imageRender(0, 0);
       showScoreModal();
     }
@@ -191,6 +191,7 @@ function userSubmitHandler(e) {
   new User(name, score);
   localStorage.setItem('User.all', JSON.stringify(User.all));
   location.href = 'highscores.html';
+  userSubmitHandler.reset();
 }
 //EVENT listener
 document.getElementById('answers').addEventListener('click', answersHandler);
