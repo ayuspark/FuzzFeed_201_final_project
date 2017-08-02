@@ -62,9 +62,11 @@ function tableScores(){
   }
 };
 
+// localStorage.setItem('theScores', JSON.stringify(theScores));
 
 if(localStorage !== null){
   newScore = JSON.parse(localStorage.getItem('User.all'));
+  // theScores = JSON.parse(localStorage.getItem('theScores'));
   tableHeader();
   addScore();
   tableScores();
