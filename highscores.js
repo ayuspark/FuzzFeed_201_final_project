@@ -10,19 +10,25 @@ function HighScore (username, score){
   theScores.push(this);
 };
 
+// Default High Scores
 new HighScore ('Adam', 8);
 new HighScore ('Phil', 5);
 new HighScore ('Lola', 6);
 new HighScore ('Brandon', 7);
 
+function sortScores(){
+  theScores.sort(function(a, b){
+    return b.score - a.score;
+  });
+};
+
 function addScore(){
-  // var User = document.getElementById('name').value;
-  theScores.push(newScore);
+  for(var i = 0; i < newScore.length; i++){
+    new HighScore (newScore[i].username, newScore[i].score);
+  }
+  sortScores();
 }
 
-theScores.sort(function(a, b){
-  return b.score - a.score;
-});
 
 HighScore.prototype.render = function(){
   var trEl = document.createElement('tr');
@@ -56,11 +62,13 @@ function tableScores(){
   }
 };
 
+// localStorage.setItem('theScores', JSON.stringify(theScores));
 
-if(localStorage){
+if(localStorage !== null){
   newScore = JSON.parse(localStorage.getItem('User.all'));
-  addScore();
+  // theScores = JSON.parse(localStorage.getItem('theScores'));
   tableHeader();
+  addScore();
   tableScores();
   console.log('Storage available');
 } else {
