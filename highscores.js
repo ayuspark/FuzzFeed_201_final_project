@@ -4,19 +4,19 @@ var newScore = [];
 var theScores = [];
 var scoresTable = document.getElementById('highscores');
 
-function HighScore (name, score){
-  this.name = name;
+function HighScore (username, score){
+  this.username = username;
   this.score = score;
   theScores.push(this);
 };
 
-new HighScore ('Adam', 800);
-new HighScore ('Phil', 500);
-new HighScore ('Lola', 600);
-new HighScore ('Brandon', 700);
+new HighScore ('Adam', 8);
+new HighScore ('Phil', 5);
+new HighScore ('Lola', 6);
+new HighScore ('Brandon', 7);
 
 function addScore(){
-
+  // var User = document.getElementById('name').value;
   theScores.push(newScore);
 }
 
@@ -27,7 +27,7 @@ theScores.sort(function(a, b){
 HighScore.prototype.render = function(){
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-  tdEl.textContent = this.name;
+  tdEl.textContent = this.username;
   trEl.appendChild(tdEl);
 
   tdEl = document.createElement('td');
