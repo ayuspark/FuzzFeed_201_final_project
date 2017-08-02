@@ -3,6 +3,7 @@ var coding; //need to get rid of
 var drink;
 var correctTime = 0;
 var score = 0;
+// var userInfo = [];
 
 if(localStorage){
   drink = JSON.parse(localStorage.getItem('drink'));
@@ -56,6 +57,7 @@ Images.all[12].question = 'How big is the herd?';
 
 
 Images.previousImg = [];
+
 function loadImg(){
   var randomIndex = Math.floor(Math.random() * Images.allNames.length);
   if(!Images.previousImg.includes(randomIndex)) {
@@ -86,6 +88,16 @@ function loadImg(){
 //PAGE LOAD IMG
 loadImg();
 
+function imageRender(drink, coding){
+  var shakeRule = [0, 1.1, 1, 0.1];
+  var blurRule = [0, 2, 5, 7];
+  var shakeLevel = shakeRule[drink] + 's';
+  var blurLevel = 'blur(' + blurRule[coding] + 'px)';
+  document.getElementById('img_box').children[0].style.animationName = 'shake ';
+  document.getElementById('img_box').children[0].style.animationDuration = shakeLevel ;
+  document.getElementById('img_box').children[0].style.filter = blurLevel;
+}
+
 function answerShuffle(answerArray){
   var currentIndex = answerArray.length, randomIndex, tempHolder;
   while(currentIndex !== 0){
@@ -100,33 +112,53 @@ function answerShuffle(answerArray){
 
 function answersHandler(e) {
   console.log(e.target.id);
-  if(e.target.id === 'y'){
-    correctTime += 1;
-    score = (parseInt(drink) + parseInt(coding)) * correctTime;
-    console.log(score);
-    imageRender(0, 0);
-    setTimeout(function(){
-      document.getElementById('img_box').innerHTML = '';
-      document.getElementById('answers').innerHTML = '';
-      loadImg();
-    }, 1500);
+  if(Images.previousImg.length !== Images.allNames.length){
+    if(e.target.id === 'y'){
+      correctTime += 1;
+      score = (parseInt(drink) + parseInt(coding)) * correctTime;
+      console.log(score);
+      imageRender(0, 0);
+      setTimeout(function(){
+        document.getElementById('img_box').innerHTML = '';
+        document.getElementById('answers').innerHTML = '';
+        loadImg();
+      }, 1500);
+    } else {
+      imageRender(0, 0);
+      showScoreModal();
+    }
   } else {
-    alert('Wrong!');
+    imageRender(0, 0);
+    showScoreModal();
   }
 }
 
+function showScoreModal() {
+  document.getElementById('score_modal').style.display = 'block';
+  document.getElementById('score').innerHTML = 'Your Score: ' + score + '!<br />' + 'Fuzzed right ' + correctTime + ' of them!';
+}
+
+function closeModalHandler(e) {
+  console.log(e.target.className);
+  if(e.target.className === 'close' || e.target.className === 'modal'){
+    document.getElementById('score_modal').style.display = 'none';
+  }
+}
+
+function User(username, score){
+  this.username = username;
+  this.score = score;
+  User.all.push(this);
+}
+
+function userSubmitHandler(e) {
+  event.preventDefault();
+  var name = e.target.username.value;
+  console.log(name);
+  new User(name, score);
+  localStorage.setItem('User.all', JSON.stringify(User.all));
+}
 //EVENT listener
 document.getElementById('answers').addEventListener('click', answersHandler);
-
-
-
-
-function imageRender(drink, coding){
-  var shakeRule = [0, 1.1, 1, 0.1];
-  var blurRule = [0, 2, 5, 7];
-  var shakeLevel = shakeRule[drink] + 's';
-  var blurLevel = 'blur(' + blurRule[coding] + 'px)';
-  document.getElementById('img_box').children[0].style.animationName = 'shake ';
-  document.getElementById('img_box').children[0].style.animationDuration = shakeLevel ;
-  document.getElementById('img_box').children[0].style.filter = blurLevel;
-}
+document.getElementById('score_modal').addEventListener('click', closeModalHandler);
+document.getElementById('user_form').addEventListener('submit', userSubmitHandler);

@@ -146,7 +146,7 @@ nav {
 }
 
 #answers button:hover{
-  /*cursor: url(fuzzfeedFavicon.ico);*/
+  /*cursor: url(indexImg/fuzzfeedFavicon.ico);*/
   cursor: pointer;
   color: rgb(245,245,245);
 	background-color:#FF1493;
@@ -185,16 +185,42 @@ nav {
 }
 
 /* Modal Content */
-.modal-content {
+.modal_content {
   position: relative;
-  background-color: #fefefe;
+  background-color: rgb(255,20,147); /*hot pink*/
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
+  border: 1px solid rgb(255,20,147);
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
+  -webkit-animation-name: fromTop;
   -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
+  animation-name: fromTop;
   animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes fromTop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes fromTop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(40,40,40);
+  text-decoration: none;
+  cursor: pointer;
 }
