@@ -145,6 +145,7 @@ function closeModalHandler(e) {
   }
 }
 
+User.all = [];
 function User(username, score){
   this.username = username;
   this.score = score;
@@ -157,6 +158,7 @@ function userSubmitHandler(e) {
   console.log(name);
   new User(name, score);
   localStorage.setItem('User.all', JSON.stringify(User.all));
+  location.href = 'highscores.html';
 }
 //EVENT listener
 document.getElementById('answers').addEventListener('click', answersHandler);
