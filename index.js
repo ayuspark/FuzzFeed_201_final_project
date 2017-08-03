@@ -32,5 +32,3 @@ document.getElementById('nav_bar').addEventListener('click', openMenuHandler);
 document.getElementById('nav_bar').addEventListener('click', closeMenuHandler);
 // Listen for submit button clickage
 document.getElementById('selectInterface').addEventListener('submit', selectHandler);
-
-// welcome back message with name if person has local storage
