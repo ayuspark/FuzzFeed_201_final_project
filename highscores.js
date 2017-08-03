@@ -64,7 +64,7 @@ function tableScores(){
 
 // localStorage.setItem('theScores', JSON.stringify(theScores));
 
-if(localStorage !== null){
+if(!localStorage){
   newScore = JSON.parse(localStorage.getItem('User.all'));
   // theScores = JSON.parse(localStorage.getItem('theScores'));
   tableHeader();
