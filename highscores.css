@@ -2,21 +2,32 @@
   /*outline: 1px solid skyblue;*/
   box-sizing: border-box;
 }
+
+header {
+  position: relative;
+  z-index: 999;
+  margin-top: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header h2 {
+  font-size: 2em;
+}
+
 /*new nav*/
-/*Put the menu icon to fixed position*/
 .mini_menu_icon {
   position: fixed;
-  top: -10px;
+  top: 5px;
   right: 5px;
 }
 
-/*This is the menu box when it is popped out, you can see the display is defaulted to none. */
 .menu {
   display: none;
   position: fixed;
   top:0px;
   left:0px;
-  outline:2px dashed purple;
+  /*outline:2px dashed purple;*/
   height: 703px;
   width:100%;
   margin: 0 auto;
@@ -28,13 +39,16 @@
 .menu li {
   display: block;
 }
-/*styling the links*/
+
 .menu a{
+  display: block;
   font-size: 6em;
   font-family: 'Source Sans Pro', sans-serif;
   color: rgb(232, 232, 232);
-  margin: 50px 0;
+  font-weight: 600;
+  margin: 70px 0;
   text-decoration: none;
+  text-align: center;
 }
 
 .menu a:hover {
@@ -120,9 +134,21 @@ th {
 	color: #FF1493;
   font-size: 24pt;
 }
+
 footer {
   clear: both;
   width: 100%;
-  height: 72px;
+  height: 100px;
   background-color: rgb(40, 40, 40);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  color: rgb(232, 232, 232);
+  margin-top: 70px;
 }
