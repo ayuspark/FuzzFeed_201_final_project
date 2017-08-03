@@ -64,14 +64,15 @@ function tableScores(){
 
 // localStorage.setItem('theScores', JSON.stringify(theScores));
 
-if(localStorage !== null){
-  newScore = JSON.parse(localStorage.getItem('User.all'));
+if(!localStorage){
   // theScores = JSON.parse(localStorage.getItem('theScores'));
+  console.log('Storage available');
   tableHeader();
+  newScore = JSON.parse(localStorage.getItem('User.all'));
   addScore();
   tableScores();
-  console.log('Storage available');
 } else {
+  console.log('Storage not available');
   tableHeader();
   tableScores();
 }

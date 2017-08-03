@@ -55,8 +55,8 @@ main {
   /*float: left;*/
   max-width: 250px;
   max-height: 250px;
-  margin: 30px 30px 30px 0px;
-  -webkit-filter: blur(5px);
+  /*margin: 30px 30px 30px 0px*/
+  /*-webkit-filter: blur(5px);*/
 }
 
 ul li:last-child {
@@ -153,9 +153,15 @@ footer {
   top: 0;
   left: 0;
 }
+
+@-webkit-keyframes blurToClear {
+  from {-webkit-filter: blur(5px);}
+  to {-webkit-filter: blur(0px);}
+}
 .front {
   z-index: 2;
   transform: rotateY(0deg);
+  -webkit-animation: blurToClear 10s 1;
 }
 .back {
   transform: rotateY(180deg);
