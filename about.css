@@ -9,7 +9,9 @@ header {
   margin-top: 0;
   /*top: 0;*/
 }
-
+a {
+  text-decoration: none;
+}
 nav {
   width: 960px;
   height: 72px;
@@ -40,44 +42,39 @@ main {
 }
 
 .bio-container {
-  border: 1px dotted red;
+  /*border: 1px dotted red;*/
   align-items: center;
   text-align: center;
   margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
   /*justify-content: space-between;*/
 }
 
 .bio {
-  float: left;
+  /*float: left;*/
+  max-width: 250px;
+  max-height: 250px;
   margin: 30px 30px 30px 0px;
   -webkit-filter: blur(5px);
 }
+
 ul li:last-child {
   margin-right: 0px;
 }
+
 .bio:hover {
   -webkit-filter: blur(0px);
 }
-/*.about {
-  position: relative;
-  height: 400px;
-  width: 100%;
-  margin: 5px auto;
-  text-align: center;
-  border: 1px solid red;
-}*/
+
 p {
   /*display: inline-block;*/
   width: 250px;
   height: 250px;
-  /*border: 1px solid black;*/
-  /*float: left;*/
   margin: 30px 30px 30px 0px;
   /*-webkit-filter: blur(0px);*/
 }
-/*p:hover {
-  -webkit-filter: blur(5px);
-}*/
+
 footer {
   clear: both;
   position: relative;
@@ -89,7 +86,7 @@ footer {
 }
 /*container 1*/
 .flip-container1 {
-  float: left;
+  /*float: left;*/
   perspective: 1000px;
   margin: 30px 40px;
   justify-content: space-between;
@@ -103,7 +100,7 @@ footer {
 }
 /*container 2*/
 .flip-container2 {
-  float: right;
+  /*float: right;*/
   perspective: 1000px;
   margin: 30px 40px;
   justify-content: space-between;
@@ -117,7 +114,7 @@ footer {
 }
 /*container 3*/
 .flip-container3 {
-  float: left;
+  /*float: left;*/
   perspective: 1000px;
   margin: 30px 40px;
   justify-content: space-between;
@@ -129,9 +126,9 @@ footer {
   width: 250px;
   height: 250px;
 }
-/*container 4*/
+/*container 4 Adam*/
 .flip-container4 {
-  float: right;
+  /*float: right;*/
   perspective: 1000px;
   margin: 30px 40px;
   justify-content: space-between;
