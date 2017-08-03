@@ -81,15 +81,15 @@ document.getElementById('nav_bar').addEventListener('click', openMenuHandler);
 document.getElementById('nav_bar').addEventListener('click', closeMenuHandler);
 
 if(!localStorage){
-  // theScores = JSON.parse(localStorage.getItem('theScores'));
-  console.log('Storage available');
-  tableHeader();
-  newScore = JSON.parse(localStorage.getItem('User.all'));
-  addScore();
-  tableScores();
-} else {
   console.log('Storage not available');
   tableHeader();
+  tableScores();
+  // theScores = JSON.parse(localStorage.getItem('theScores'));
+} else {
+  console.log('Storage available');
+  newScore = JSON.parse(localStorage.getItem('User.all'));
+  tableHeader();
+  addScore();
   tableScores();
 }
 // allScores();
