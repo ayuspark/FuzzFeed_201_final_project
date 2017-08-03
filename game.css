@@ -150,7 +150,7 @@ nav *{
 #answers button {
   width: 70%;
   display: block;
-  color: #282828;
+  color: rgb(40,40,40);
   font-size: 1.8em;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 50px auto;
@@ -160,8 +160,8 @@ nav *{
 	font-weight: 700;
 	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.41);
   box-shadow: 0 3px 0 0 #383838;
-	border:3px solid #e8e8e8;
-  background-color:#e8e8e8;
+	border:3px solid rgb(232, 232, 232);
+  background-color:rgb(232, 232, 232);
   animation: pulse 1s linear infinite alternate;
 	-webkit-animation: pulse 1s linear infinite alternate;
 }
@@ -190,7 +190,7 @@ nav *{
 #answers button:hover{
   cursor: pointer;
   color: rgb(245,245,245);
-	background-color:#FF1493;
+	background-color:rgb(255,20,147);
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
@@ -270,8 +270,8 @@ nav *{
 
 .modal_header {
   padding: 10px 16px;
-  background-color: #282828;
-  color: #e8e8e8;
+  background-color: rgb(40,40,40);
+  color: rgb(232, 232, 232);
   font-size: 3em;
   text-align: center;
 }
@@ -306,7 +306,7 @@ nav *{
 #user_form {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.4em;
-  color: #282828;
+  color: rgb(40,40,40);
   text-align: center;
 }
 
@@ -316,7 +316,7 @@ nav *{
 }
 
 #user_submit {
-  background-color: #FF1493;
+  background-color: rgb(255,20,147);
   border: none;
   margin: auto 0;
 }
