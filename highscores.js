@@ -62,16 +62,33 @@ function tableScores(){
   }
 };
 
-// localStorage.setItem('theScores', JSON.stringify(theScores));
+// menu javascript
+function openMenuHandler(e){
+  if(e.target.className === 'mini_menu_icon'){
+    document.getElementsByClassName('menu')[0].style.display = 'block';
+    document.getElementsByClassName('mini_menu_icon')[0].style.display = 'none';
+  }
+}
+
+function closeMenuHandler(e) {
+  if(e.target.className === 'close'){
+    document.getElementsByClassName('menu')[0].style.display = 'none';
+    document.getElementsByClassName('mini_menu_icon')[0].style.display = 'block';
+  }
+}
+
+document.getElementById('nav_bar').addEventListener('click', openMenuHandler);
+document.getElementById('nav_bar').addEventListener('click', closeMenuHandler);
 
 if(!localStorage){
-  newScore = JSON.parse(localStorage.getItem('User.all'));
   // theScores = JSON.parse(localStorage.getItem('theScores'));
+  console.log('Storage available');
   tableHeader();
+  newScore = JSON.parse(localStorage.getItem('User.all'));
   addScore();
   tableScores();
-  console.log('Storage available');
 } else {
+  console.log('Storage not available');
   tableHeader();
   tableScores();
 }

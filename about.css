@@ -2,22 +2,75 @@
   /*outline: 1px solid skyblue;*/
   box-sizing: border-box;
 }
+/*new nav deal*/
+/*Put the menu icon to fixed position*/
+.mini_menu_icon {
+  position: fixed;
+  top: -10px;
+  right: 5px;
+}
 
-header {
+/*This is the menu box when it is popped out, you can see the display is defaulted to none. */
+.menu {
+  display: none;
+  position: fixed;
+  top:0px;
+  left:0px;
+  outline:2px dashed purple;
+  height: 703px;
+  width:100%;
+  margin: 0 auto;
+  z-index: 100000;
+  background-color: rgba(40,40,40, 0.9);
+  padding: 120px 50px;
+}
+
+.menu li {
+  display: block;
+}
+/*styling the links*/
+.menu a{
+  font-size: 6em;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(232, 232, 232);
+  margin: 50px 0;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: rgb(255,20,147);
+  transform: scale(1.2);
+}
+/*styling the close button "X"*/
+.menu .close {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 5em;
+  color: rgb(232, 232, 232);
+  position: absolute;
+  top: -5px;
+  left: 7px;
+}
+
+.menu .close:hover {
+  color: rgb(255,20,147);
+}
+
+/*end of nav deal*/
+/*header {
   position: relative;
   z-index: 999;
   margin-top: 0;
-  /*top: 0;*/
-}
-a {
+  top: 0;
+}*/
+/*a {
   text-decoration: none;
-}
-nav {
+}*/
+/*nav {
   width: 960px;
   height: 72px;
   margin: 20px auto;
-  /*outline: 1px solid red;*/
-}
+  outline: 1px solid red;
+}*/
 
 #fuzzfeed a {
   font-size: 3em;
@@ -31,9 +84,9 @@ nav {
   text-align: center;
 }
 
-#nav_bar li {
+/*#nav_bar li {
   display: inline-block;
-}
+}*/
 
 main {
   text-align: center;
@@ -55,8 +108,8 @@ main {
   /*float: left;*/
   max-width: 250px;
   max-height: 250px;
-  margin: 30px 30px 30px 0px;
-  -webkit-filter: blur(5px);
+  /*margin: 30px 30px 30px 0px*/
+  /*-webkit-filter: blur(5px);*/
 }
 
 ul li:last-child {
@@ -153,9 +206,15 @@ footer {
   top: 0;
   left: 0;
 }
+
+@-webkit-keyframes blurToClear {
+  from {-webkit-filter: blur(5px);}
+  to {-webkit-filter: blur(0px);}
+}
 .front {
   z-index: 2;
   transform: rotateY(0deg);
+  -webkit-animation: blurToClear 10s 1;
 }
 .back {
   transform: rotateY(180deg);

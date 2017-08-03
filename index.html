@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="shortcut icon" href="indexImg/fuzzfeedFavicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <title>FuzzFeed</title>
 </head>
 <body>
@@ -18,6 +19,22 @@
     <h1>FuzzFeed</h1>
   </div>
 
+  <!-- This is how the menu is structured in html.
+The basic idea is to put the icon on the top right corner, using display: fixed; and create a div box that contains the <ul> of menu items.
+When not clicked, the div box is not showing, using display:none.
+And we use JS to activate its display.   -->
+
+<nav id="nav_bar">
+  <img class="mini_menu_icon" src="indexImg/menu-icon.png" alt="menu icon" height="50"/>
+    <ul class="menu">
+      <!-- this is the Close Button "X" -->
+      <li class="close">&times;</li>
+      <!-- these are the menu items -->
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="highscores.html">HIGH SCORES</a></li>
+    </ul>
+</nav>
+
   <form id="selectInterface">
     <div class="tooltip"><img src="indexImg/Question_mark.png" alt="Question Mark" style="width:50px;height:50px;">
       <span class="tooltiptext">Select the number of alcoholic drinks you've consumed then the length of time you have been coding for. Once we have your input, we'll display an image as seen through the eyes of an indivual succumbing to the effects of these two horrible vices at the levels you've specified.</span>
@@ -25,7 +42,7 @@
     <select id="drinkSelect" name="drinkSelect">
       <option value="" disabled selected>How many drinks?</option>
       <option value="1">Sober as a goat</option>
-      <option value="2">A few</option>
+      <option value="2">A few...</option>
       <option value="3">... calling ex</option>
     </select>
     <select id="codeSelect" name="codeSelect">
