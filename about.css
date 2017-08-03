@@ -69,23 +69,6 @@ header h2 {
   color: rgb(255,20,147);
 }
 
-/*end of nav deal*/
-/*header {
-  position: relative;
-  z-index: 999;
-  margin-top: 0;
-  top: 0;
-}*/
-/*a {
-  text-decoration: none;
-}*/
-/*nav {
-  width: 960px;
-  height: 72px;
-  margin: 20px auto;
-  outline: 1px solid red;
-}*/
-
 #fuzzfeed a {
   font-size: 3em;
   color: rgb(255,20,147);
@@ -97,10 +80,6 @@ header h2 {
 #nav_bar {
   text-align: center;
 }
-
-/*#nav_bar li {
-  display: inline-block;
-}*/
 
 main {
   text-align: center;
@@ -134,8 +113,11 @@ ul li:last-child {
   -webkit-filter: blur(0px);
 }
 
+.back p {
+  font-family: 'Source Sans Pro', sans-serif;
+  
+}
 footer {
-  /*clear: both;*/
   position: fixed;
   bottom: 0;
   left: 0;
@@ -143,7 +125,6 @@ footer {
   height: 124px;
   background-color: rgb(40, 40, 40);
   color: rgb(232, 232, 232);
-  /*margin-top: 175px;*/
   text-align: center;
 }
 
