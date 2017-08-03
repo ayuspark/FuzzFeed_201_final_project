@@ -2,11 +2,23 @@
   /*outline: 1px solid skyblue;*/
   box-sizing: border-box;
 }
+
+header {
+  position: relative;
+  z-index: 999;
+  margin-top: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header h2 {
+  font-size: 2em;
+}
+
 /*new nav deal*/
-/*Put the menu icon to fixed position*/
 .mini_menu_icon {
   position: fixed;
-  top: -10px;
+  top: 5px;
   right: 5px;
 }
 
@@ -30,8 +42,10 @@
 }
 /*styling the links*/
 .menu a{
+  display: block;
   font-size: 6em;
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
   color: rgb(232, 232, 232);
   margin: 50px 0;
   text-decoration: none;
@@ -120,22 +134,50 @@ ul li:last-child {
   -webkit-filter: blur(0px);
 }
 
-p {
-  /*display: inline-block;*/
-  width: 250px;
-  height: 250px;
-  margin: 30px 30px 30px 0px;
-  /*-webkit-filter: blur(0px);*/
-}
-
 footer {
-  clear: both;
-  position: relative;
+  /*clear: both;*/
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 124px;
   background-color: rgb(40, 40, 40);
-  color: white;
-  margin-top: 175px;
+  color: rgb(232, 232, 232);
+  /*margin-top: 175px;*/
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  color: rgba(232, 232, 232, 0.7);
+  margin-top: 12px;
+}
+
+#contact li{
+  display: inline-block;
+  margin: 30px 50px;
+}
+
+#contact li:first-child{
+  font-size: 1.8em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  /*color: rgb(255,20,147);*/
+}
+
+#contact a {
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+  color: rgb(232, 232, 232);
+}
+
+#contact a:hover {
+  font-family: "Frijole", sans-serif;
+  font-weight: lighter;
+  color: rgb(255,20,147);
 }
 /*container 1*/
 .flip-container1 {
