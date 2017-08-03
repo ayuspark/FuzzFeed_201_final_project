@@ -28,7 +28,6 @@ header h2 {
   position: fixed;
   top:0px;
   left:0px;
-  outline:2px dashed purple;
   height: 703px;
   width:100%;
   margin: 0 auto;
@@ -143,7 +142,6 @@ footer {
   height: 124px;
   background-color: rgb(40, 40, 40);
   color: rgb(232, 232, 232);
-  /*margin-top: 175px;*/
   text-align: center;
 }
 
