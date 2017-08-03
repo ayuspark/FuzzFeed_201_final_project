@@ -123,6 +123,7 @@ table {
   margin-bottom: 100px;
 }
 td {
+  font-family: 'Source Sans Pro', sans-serif;
 	padding: 10px;
   border: 1px solid black;
   background-color: #CCB2BF;
@@ -130,6 +131,7 @@ td {
   font-size: 18pt;
 }
 th {
+  font-family: 'Source Sans Pro', sans-serif;
 	background-color: rgb(40, 40, 40);
 	color: #FF1493;
   font-size: 24pt;
